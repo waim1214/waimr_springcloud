@@ -10,7 +10,7 @@ spring:
     activate:
       on-profile: dev
 server:
-  port: 7001
+  port: 7005
 eureka:
   instance:
     hostname: 127.0.0.1
@@ -29,7 +29,7 @@ spring:
     activate:
       on-profile: test
 server:
-  port: 7002
+  port: 7006
 eureka:
   instance:
     hostname: 127.0.0.1
