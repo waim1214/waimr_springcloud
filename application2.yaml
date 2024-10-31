@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  application:
+    name: client1
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    instance-id: ${spring.cloud.client.hostname}:${server.port}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+---
+spring:
+  application:
+    name: client2
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    instance-id: ${spring.cloud.client.hostname}:${server.port}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:7002/eureka/
