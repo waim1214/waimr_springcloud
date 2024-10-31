@@ -14,10 +14,10 @@ server:
 eureka:
   instance:
     hostname: 127.0.0.1
-    instance-id: ${spring.cloud.client.hostname}:${server.port}
+    instance-id: 1111
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:7001/eureka/
 
@@ -33,9 +33,9 @@ server:
 eureka:
   instance:
     hostname: 127.0.0.1
-    instance-id: ${spring.cloud.client.hostname}:${server.port}
+    instance-id: 2222
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:7002/eureka/
